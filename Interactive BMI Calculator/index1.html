@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive BMI Calculator</h1>
+        <div class="calculator">
+            <div class="input-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="Enter your age" min="1" required>
+            </div>
+            <div class="input-group">
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <label>
+                        <input type="radio" name="gender" value="male"> Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female"> Female
+                    </label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" placeholder="Enter your height" min="1" required>
+            </div>
+            <div class="input-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" placeholder="Enter your weight" min="1" required>
+            </div>
+            <button id="calculate-btn" class="calculate-btn">Calculate BMI</button>
+        </div>
+    </div>
+
+    <!-- Modal for Result -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Your BMI Result</h2>
+            <p id="bmi-message"></p>
+            <div id="nutrition-info"></div>
+            <button id="generate-report-btn" class="generate-report-btn">Generate Report</button>
+            <!-- New Button for Calorie Calculator -->
+            <button id="calorie-calculator-btn" class="generate-report-btn">Open Calorie Calculator</button>
+        </div>
+    </div>
+
+    <!-- Calorie Calculator Modal -->
+    <div id="calorie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-calorie-modal">&times;</span>
+            <h2>Calorie Calculator</h2>
+            <label for="min-calories">Minimum Calories:</label>
+            <input type="number" id="min-calories" placeholder="Min Calories" required>
+            <label for="max-calories">Maximum Calories:</label>
+            <input type="number" id="max-calories" placeholder="Max Calories" required>
+            <button id="fetch-calories-btn">Fetch Food</button>
+            <div id="food-suggestions"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
